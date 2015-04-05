@@ -1,5 +1,5 @@
 {
-  "name": "dashing-js-redis-history",
+  "name": "dashing-js-redis",
   "version": "0.0.1",
   "description": "Redis history store for dashing-js activity.",
   "main": "index.js",
@@ -7,5 +7,9 @@
     "test": "make test"
   },
   "author": "Ryan Cromwell",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "redis": "^0.12.1"
+  }
 }
