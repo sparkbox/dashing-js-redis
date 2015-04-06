@@ -1,6 +1,6 @@
 {
   "name": "dashing-js-redis",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Redis history store for dashing-js activity.",
   "main": "index.js",
   "scripts": {
