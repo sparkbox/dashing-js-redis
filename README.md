@@ -1,5 +1,8 @@
 ## dashing-js redis store
 
+Provides a redis backing store for dashing-js history to replace the default,
+in-memory store shipped out-of-box.
+
 _Important:_ Based on the [Sparkbox fork of dashing-js](https://github.com/sparkbox/dashing-js)
 fork of [dashing-js](https://github.com/fabiocaseri/dashing-js).
 
