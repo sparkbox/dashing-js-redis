@@ -9,7 +9,7 @@ var redis = Promise.promisifyAll(require("redis"));
 var RedisHistory = module.exports = function(options) {
   var self = {};
 
-  self.client = redis.createClient();
+  self.client = createRedisClient(options);
 
   self.record = function(id, data) {
     var key = keyFor(id);
@@ -25,6 +25,14 @@ var RedisHistory = module.exports = function(options) {
         return self.client.getAsync(key);
       });
   };
+
+  function createRedisClient(options) {
+    var port = options.port || 6379;
+    var server = options.host || '127.0.0.1';
+    var options = options.options || {};
+
+    return redis.createClient(port, server, options);
+  }
 
   function keyFor(id) {
     return id.toString();

@@ -18,3 +18,20 @@ dashing.useHistoryStore(new RedisHistory());
 
 dashing.start();
 ```
+
+## Configuration
+
+Options for
+[`redis.createClient`](https://www.npmjs.com/package/redis#rediscreateclient) can be provided via the `RedisHistory`
+constructor.
+
+### Example
+```
+var history = new RedisHistory( {
+  port: 6379,
+  host: '127.0.0.1',
+  options: { /* other options */ }
+});
+
+dashing.useHistoryStore(history);
+```
