@@ -6,10 +6,10 @@
 var Promise = require('bluebird');
 var redis = Promise.promisifyAll(require("redis"));
 
-var RedisHistory = module.exports = function(options) {
+var RedisHistory = module.exports = function(port, host, options) {
   var self = {};
 
-  self.client = createRedisClient(options);
+  self.client = createRedisClient(port, host, options);
 
   self.record = function(id, data) {
     var key = keyFor(id);
@@ -26,12 +26,12 @@ var RedisHistory = module.exports = function(options) {
       });
   };
 
-  function createRedisClient(options) {
-    var port = options.port || 6379;
-    var server = options.host || '127.0.0.1';
-    var options = options.options || {};
+  function createRedisClient(port, host, options) {
+    port = port || 6379;
+    host = host || '127.0.0.1';
+    options = options || {};
 
-    return redis.createClient(port, server, options);
+    return redis.createClient(port, host, options);
   }
 
   function keyFor(id) {
