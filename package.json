@@ -3,6 +3,10 @@
   "version": "0.0.2",
   "description": "Redis history store for dashing-js activity.",
   "main": "index.js",
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/sparkbox/dashing-js-redis.git"
+  },
   "scripts": {
     "test": "make test"
   },
